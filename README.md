@@ -1,1 +1,1 @@
-# react-study-2022-1
+# This repository is for studying react
