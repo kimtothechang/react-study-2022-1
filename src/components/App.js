@@ -20,6 +20,16 @@ function App() {
     setData([newItem, ...data]);
   };
 
+  const onDelete = () => {
+    setData(
+      data.map((idx) => {
+        if (idx.id !== data.length) {
+          return idx;
+        }
+      })
+    );
+  };
+
   return (
     <div>
       <DiaryEditor onCreate={onCreate} />
