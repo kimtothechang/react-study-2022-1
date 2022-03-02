@@ -2,14 +2,14 @@ import { useState } from "react";
 import styled from "styled-components";
 import DiaryCard from "./DiaryCard";
 
-const DiaryList = ({ diaryList }) => {
+const DiaryList = ({ diaryList, onRemove, onEdit }) => {
   return (
     <DiaryWrapper>
       <h2>일지</h2>
       <h4>{diaryList.length}개의 일기가 있습니다.</h4>
       <div>
         {diaryList.map((it) => (
-          <DiaryCard key={it.id} {...it} />
+          <DiaryCard key={it.id} {...it} onRemove={onRemove} onEdit={onEdit} />
         ))}
       </div>
     </DiaryWrapper>
