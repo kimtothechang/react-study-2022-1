@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 
 const DiaryCard = ({
@@ -10,6 +10,10 @@ const DiaryCard = ({
   onRemove,
   onEdit,
 }) => {
+  useEffect(() => {
+    console.log(`${id}번 째 카드 렌더!`);
+  });
+
   const [isEdit, setIsEdit] = useState(false);
   const toggleIsEdit = () => setIsEdit(!isEdit);
   const [localContent, setLocalContent] = useState(content);
@@ -70,7 +74,7 @@ const DiaryCard = ({
   );
 };
 
-export default DiaryCard;
+export default React.memo(DiaryCard);
 
 const DiaryCardWrapper = styled.div`
   display: flex;

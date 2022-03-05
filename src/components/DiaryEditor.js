@@ -2,10 +2,6 @@ import styled from "styled-components";
 import React, { useState, useRef, useEffect } from "react";
 
 const DiaryEditor = ({ onCreate }) => {
-  useEffect(() => {
-    console.log("DiaryEditor rendered");
-  });
-
   const authorInput = useRef();
   const contentInput = useRef();
 
